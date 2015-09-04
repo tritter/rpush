@@ -86,7 +86,6 @@ module Rpush
               failures.description += " #{unavailable_idxs.join(', ')} will be retried as notification #{new_notification.id}."
             end
             handle_errors(failures)
-            fail Rpush::DeliveryError.new(nil, @notification.id, failures.description)
           end
         end
 
